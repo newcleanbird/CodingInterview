@@ -1,20 +1,12 @@
-/*******************************************************************
-Copyright(c) 2016, Harry He
-All rights reserved.
-
-Distributed under the BSD license.
-(See accompanying file LICENSE.txt at
-https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
-*******************************************************************/
-
 //==================================================================
-// ¡¶½£Ö¸Offer¡ª¡ªÃûÆóÃæÊÔ¹Ù¾«½²µäĞÍ±à³ÌÌâ¡·´úÂë
-// ×÷Õß£ººÎº£ÌÎ
+// ã€Šå‰‘æŒ‡Offerâ€”â€”åä¼é¢è¯•å®˜ç²¾è®²å…¸å‹ç¼–ç¨‹é¢˜ã€‹ä»£ç 
+// æœ¬ä¹¦åŸä½œè€…ï¼šä½•æµ·æ¶›
+// ä»“åº“ä½œè€…ï¼šæ·¡å®šä½†ä¸
 //==================================================================
 
-// ÃæÊÔÌâ23£ºÁ´±íÖĞ»·µÄÈë¿Ú½áµã
-// ÌâÄ¿£ºÒ»¸öÁ´±íÖĞ°üº¬»·£¬ÈçºÎÕÒ³ö»·µÄÈë¿Ú½áµã£¿ÀıÈç£¬ÔÚÍ¼3.8µÄÁ´±íÖĞ£¬
-// »·µÄÈë¿Ú½áµãÊÇ½áµã3¡£
+// é¢è¯•é¢˜23ï¼šé“¾è¡¨ä¸­ç¯çš„å…¥å£ç»“ç‚¹
+// é¢˜ç›®ï¼šä¸€ä¸ªé“¾è¡¨ä¸­åŒ…å«ç¯ï¼Œå¦‚ä½•æ‰¾å‡ºç¯çš„å…¥å£ç»“ç‚¹ï¼Ÿä¾‹å¦‚ï¼Œåœ¨å›¾3.8çš„é“¾è¡¨ä¸­ï¼Œ
+// ç¯çš„å…¥å£ç»“ç‚¹æ˜¯ç»“ç‚¹3ã€‚
 
 #include <cstdio>
 #include "../Utilities/list.h"
@@ -50,7 +42,7 @@ ListNode* EntryNodeOfLoop(ListNode* pHead)
     if(meetingNode == nullptr)
         return nullptr;
 
-    // µÃµ½»·ÖĞ½áµãµÄÊıÄ¿
+    // å¾—åˆ°ç¯ä¸­ç»“ç‚¹çš„æ•°ç›®
     int nodesInLoop = 1;
     ListNode* pNode1 = meetingNode;
     while(pNode1->m_pNext != meetingNode)
@@ -59,12 +51,12 @@ ListNode* EntryNodeOfLoop(ListNode* pHead)
         ++nodesInLoop;
     }
 
-    // ÏÈÒÆ¶¯pNode1£¬´ÎÊıÎª»·ÖĞ½áµãµÄÊıÄ¿
+    // å…ˆç§»åŠ¨pNode1ï¼Œæ¬¡æ•°ä¸ºç¯ä¸­ç»“ç‚¹çš„æ•°ç›®
     pNode1 = pHead;
     for(int i = 0; i < nodesInLoop; ++i)
         pNode1 = pNode1->m_pNext;
 
-    // ÔÙÒÆ¶¯pNode1ºÍpNode2
+    // å†ç§»åŠ¨pNode1å’ŒpNode2
     ListNode* pNode2 = pHead;
     while(pNode1 != pNode2)
     {
